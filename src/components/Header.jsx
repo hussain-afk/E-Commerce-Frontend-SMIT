@@ -174,43 +174,44 @@ const Header = () => {
             {
               enableDasboardButton && (
 
-                <button
-                  onClick={() => navigate('/dashboard')}
-                  className="
-                hidden md:inline-flex items-center gap-2
-                h-9 px-4
-                rounded-full
-                bg-black text-white
-                border border-neutral-800
-                text-xs font-semibold
-                shadow-sm
-                transition-all duration-200
-                hover:bg-neutral-900
-                hover:border-neutral-700
-                hover:-translate-y-0.5
-                hover:shadow-md
-                active:scale-95
-                focus:outline-none
-                focus:ring-2
-                focus:ring-neutral-400/30
+                <NavLink to="https://e-commerce-admin-frontend-smit.vercel.app/" target="_blank" rel="noopener noreferrer">
+                  <button
+                    className="
+                        hidden md:inline-flex items-center gap-2
+                        h-9 px-4
+                        rounded-full
+                        bg-black text-white
+                        border border-neutral-800
+                        text-xs font-semibold
+                        shadow-sm
+                        transition-all duration-200
+                        hover:bg-neutral-900
+                        hover:border-neutral-700
+                        hover:-translate-y-0.5
+                        hover:shadow-md
+                        active:scale-95
+                        focus:outline-none
+                        focus:ring-2
+                      focus:ring-neutral-400/30
             "
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    className="w-3.5 h-3.5"
                   >
-                    <rect x="3" y="3" width="7" height="7" rx="1.5" />
-                    <rect x="14" y="3" width="7" height="7" rx="1.5" />
-                    <rect x="3" y="14" width="7" height="7" rx="1.5" />
-                    <rect x="14" y="14" width="7" height="7" rx="1.5" />
-                  </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      className="w-3.5 h-3.5"
+                    >
+                      <rect x="3" y="3" width="7" height="7" rx="1.5" />
+                      <rect x="14" y="3" width="7" height="7" rx="1.5" />
+                      <rect x="3" y="14" width="7" height="7" rx="1.5" />
+                      <rect x="14" y="14" width="7" height="7" rx="1.5" />
+                    </svg>
 
-                  Dashboard
-                </button>
+                    Dashboard
+                  </button>         
+                </NavLink>
 
               )
             }
