@@ -215,10 +215,10 @@ const Header = () => {
               )
             }
             {
-    user && (
-        <button
-            onClick={handleLogout}
-            className="
+              user && (
+                <button
+                  onClick={handleLogout}
+                  className="
                 hidden md:inline-flex
                 items-center justify-center
                 gap-2
@@ -256,21 +256,21 @@ const Header = () => {
                 focus:ring-red-500/20
                 focus:ring-offset-2
             "
-        >
+                >
 
-            <LogOut
-                size={15}
-                strokeWidth={2}
-                className="transition-transform duration-200 group-hover:translate-x-0.5"
-            />
+                  <LogOut
+                    size={15}
+                    strokeWidth={2}
+                    className="transition-transform duration-200 group-hover:translate-x-0.5"
+                  />
 
-            <span>
-                Logout
-            </span>
+                  <span>
+                    Logout
+                  </span>
 
-        </button>
-    )
-}
+                </button>
+              )
+            }
           </div>
 
         </div>
@@ -340,12 +340,9 @@ const Header = () => {
 
               <div className="pt-3 mt-3 border-t border-black/10">
 
-                <button
-                  onClick={() => {
-                    navigate('/dashboard');
-                    setIsMobileMenuOpen(false);
-                  }}
-                  className="
+                <NavLink to="https://e-commerce-admin-frontend-smit.vercel.app/" target="_blank" rel="noopener noreferrer">
+                  <button
+                    className="
                         w-full
                         h-11
                         flex items-center justify-center gap-2
@@ -376,70 +373,71 @@ const Header = () => {
                         focus:ring-2
                         focus:ring-neutral-400/30
                     "
-                >
-
-                  {/* Dashboard Icon */}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    className="w-4 h-4"
                   >
-                    <rect
-                      x="3"
-                      y="3"
-                      width="7"
-                      height="7"
-                      rx="1.5"
-                    />
 
-                    <rect
-                      x="14"
-                      y="3"
-                      width="7"
-                      height="7"
-                      rx="1.5"
-                    />
+                    {/* Dashboard Icon */}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      className="w-4 h-4"
+                    >
+                      <rect
+                        x="3"
+                        y="3"
+                        width="7"
+                        height="7"
+                        rx="1.5"
+                      />
 
-                    <rect
-                      x="3"
-                      y="14"
-                      width="7"
-                      height="7"
-                      rx="1.5"
-                    />
+                      <rect
+                        x="14"
+                        y="3"
+                        width="7"
+                        height="7"
+                        rx="1.5"
+                      />
 
-                    <rect
-                      x="14"
-                      y="14"
-                      width="7"
-                      height="7"
-                      rx="1.5"
-                    />
-                  </svg>
+                      <rect
+                        x="3"
+                        y="14"
+                        width="7"
+                        height="7"
+                        rx="1.5"
+                      />
 
-                  <span>
-                    Dashboard
-                  </span>
+                      <rect
+                        x="14"
+                        y="14"
+                        width="7"
+                        height="7"
+                        rx="1.5"
+                      />
+                    </svg>
 
-                </button>
+                    <span>
+                      Dashboard
+                    </span>
+
+                  </button>
+                </NavLink>
 
               </div>
 
             )}
             {
-    user && (
+              user && (
 
-        <div className="pt-3 mt-3 border-t border-black/10">
+                <div className="pt-3 mt-3 border-t border-black/10">
 
-            <button
-                onClick={() => {
-                    handleLogout();
-                    setIsMobileMenuOpen(false);
-                }}
-                className="
+                  <button
+                    onClick={() => {
+                      handleLogout();
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="
                     group
 
                     w-full
@@ -474,28 +472,28 @@ const Header = () => {
                     focus:ring-2
                     focus:ring-red-500/20
                 "
-            >
+                  >
 
-                <LogOut
-                    size={17}
-                    strokeWidth={2}
-                    className="
+                    <LogOut
+                      size={17}
+                      strokeWidth={2}
+                      className="
                         transition-transform
                         duration-200
                         group-hover:translate-x-0.5
                     "
-                />
+                    />
 
-                <span>
-                    Logout
-                </span>
+                    <span>
+                      Logout
+                    </span>
 
-            </button>
+                  </button>
 
-        </div>
+                </div>
 
-    )
-}
+              )
+            }
 
           </nav>
         )}
