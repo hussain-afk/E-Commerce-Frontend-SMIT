@@ -38,8 +38,8 @@ const Routing = () => {
   const AdminProtectedRoute = ({ children }) => {
     if (adminUser) {
       if(adminUser.user.role !== 'admin') {
-        toast.error('You need to be an admin to access this page');
-        return <Navigate to="/auth" replace />;
+        toast.error('Please log in as an admin to access this page');
+        return <Navigate to="/admin/auth" replace />;
       }
     }
     else {
