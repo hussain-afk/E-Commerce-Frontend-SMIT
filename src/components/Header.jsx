@@ -32,6 +32,14 @@ const Header = () => {
   const dropdownRef = useRef(null);
 
 
+  const handleAuthNavigate = () => {
+    if (user) {
+      navigate('/');
+      toast.success('You are already logged in');
+    }else {
+      navigate('/auth');
+    }
+  }
 
 
   // Close desktop dropdown on outside click
@@ -164,7 +172,7 @@ const Header = () => {
 
             {/* Profile Icon */}
             <div
-              onClick={() => navigate('/auth')}
+              onClick={handleAuthNavigate}
               className="p-1.5 text-black hover:opacity-75 transition-opacity cursor-pointer"
               aria-label="Account Profile"
             >
