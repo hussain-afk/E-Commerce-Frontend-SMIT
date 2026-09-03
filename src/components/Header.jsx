@@ -174,7 +174,7 @@ const Header = () => {
             {
               enableDasboardButton && (
 
-                <NavLink to="https://e-commerce-admin-frontend-smit.vercel.app/" target="_blank" rel="noopener noreferrer">
+                <NavLink to="/admin/auth">
                   <button
                     className="
                         hidden md:inline-flex items-center gap-2
@@ -341,7 +341,7 @@ const Header = () => {
 
               <div className="pt-3 mt-3 border-t border-black/10">
 
-                <NavLink to="https://e-commerce-admin-frontend-smit.vercel.app/" target="_blank" rel="noopener noreferrer">
+                <NavLink to="/admin/auth">
                   <button
                     className="
                         w-full

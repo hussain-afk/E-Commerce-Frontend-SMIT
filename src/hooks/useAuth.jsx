@@ -1,4 +1,4 @@
-import { registerUser, loginUser, logoutUser,  } from '../api/auth.api.js';
+import { registerUser, loginUser, logoutUser, adminLoginUser } from '../api/auth.api.js';
 import { useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { StoreContext } from '../context/StoreContext';
@@ -6,7 +6,7 @@ import { toast } from 'react-hot-toast';
 
 const useAuth = () => {
     const navigate = useNavigate();
-    const { setUser, setLoading, setEnableDashboardButton, enableDasboardButton } = useContext(StoreContext);
+    const { setUser, setLoading, setEnableDashboardButton, enableDasboardButton, setAdminUser } = useContext(StoreContext);
     console.log('enableDasboardButton:', enableDasboardButton);
 
     const handleRegister = async (username, email, password) => {
@@ -20,9 +20,9 @@ const useAuth = () => {
             setUser(data);
             toast.success('User registered successfully');
             console.log('User registered:', data);
-            if(data.user.role==='admin') {
+            if (data.user.role === 'admin') {
                 setEnableDashboardButton(true);
-            }else{
+            } else {
                 setEnableDashboardButton(false);
             }
             navigate('/');
@@ -45,9 +45,9 @@ const useAuth = () => {
             );
             setUser(data);
             console.log('User logged in:', data);
-            if(data.user.role==='admin') {
+            if (data.user.role === 'admin') {
                 setEnableDashboardButton(true);
-            }else{
+            } else {
                 setEnableDashboardButton(false);
             }
             toast.success('User logged in successfully');
@@ -61,6 +61,28 @@ const useAuth = () => {
             setLoading(false);
         }
     };
+
+    const handleAdminLogin = async (username, password) => {
+        try {
+            setLoading(true);
+            const data = await adminLoginUser(
+                username,
+                password
+            );
+            if (data.user.role === 'admin') {
+                setAdminUser(data);
+                // setEnableDashboardButton(true);
+                toast.success('Admin logged in successfully');
+                navigate('/admin',{ replace: true});
+            }
+        } catch (error) {
+            console.error('Error in handleAdminLogin:', error);
+            toast.error('Failed to log in admin user');
+            throw error;
+        } finally {
+            setLoading(false);
+        }
+    }
 
     const handleLogout = async () => {
         try {
@@ -80,6 +102,7 @@ const useAuth = () => {
     return {
         handleRegister,
         handleLogin,
+        handleAdminLogin,
         handleLogout
     };
 

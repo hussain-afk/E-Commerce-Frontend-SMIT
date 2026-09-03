@@ -13,8 +13,10 @@ const StoreProvider = ({ children }) => {
     const [user, setUser] = useState(null); // State to hold the current user
     const [loading, setLoading] = useState(false); // State to manage loading state
     const [enableDasboardButton, setEnableDashboardButton] = useState(false)
+    const [adminUser, setAdminUser] = useState(null); // State to hold the current admin user
     const navigate = useNavigate()
 
+    console.log(user, 'user in context');
     useEffect(() => {
         let mounted = true;
         const fetchUserProfile = async () => {
@@ -58,7 +60,7 @@ const StoreProvider = ({ children }) => {
 
 
     return (
-        <StoreContext.Provider value={{  enableDasboardButton, setEnableDashboardButton, user, setUser, sameCategoryProducts, setSameCategoryProducts, isAuthModalOpen, setIsAuthModalOpen, isVisible, setIsVisible, cartItemCount, setCartItemCount, loading, setLoading }}>
+        <StoreContext.Provider value={{  enableDasboardButton, setEnableDashboardButton, user, setUser, sameCategoryProducts, setSameCategoryProducts, isAuthModalOpen, setIsAuthModalOpen, isVisible, setIsVisible, cartItemCount, setCartItemCount, loading, setLoading, adminUser, setAdminUser }}>
             {children}
         </StoreContext.Provider>
     )

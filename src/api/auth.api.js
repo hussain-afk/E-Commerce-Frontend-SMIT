@@ -3,6 +3,7 @@ import axios from "axios";
 
 export const api = axios.create({
     baseURL: 'https://ecommerce-backend-smit-rho.vercel.app/',
+    // https://ecommerce-backend-smit-rho.vercel.app/
     headers: {
         'Content-Type': 'application/json'
     },
@@ -32,6 +33,19 @@ export const loginUser = async (username, password) => {
         return res.data;
     } catch (error) {
         console.error('Error logging in user:', error);
+        throw error;
+    }
+}
+
+export const adminLoginUser = async (username, password) => {
+    try {
+        const res = await api.post('/api/auth/admin-login',{
+            username,
+            password
+        })
+        return res.data;
+    } catch (error) {
+        console.error('Error logging in admin user:', error);
         throw error;
     }
 }
