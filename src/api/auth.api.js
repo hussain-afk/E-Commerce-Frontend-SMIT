@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 export const api = axios.create({
-    baseURL: 'https://e-commerce-frontend-smit.vercel.app', // Replace with your backend API URL
+    baseURL: 'https://ecommerce-backend-smit-rho.vercel.app/', // Replace with your backend API URL
     // https://ecommerce-backend-smit-rho.vercel.app/
     headers: {
         'Content-Type': 'application/json'
