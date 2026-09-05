@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import useAuth from '../hooks/useAuth.jsx';
 import { useContext } from 'react';
 import { StoreContext } from '../context/StoreContext.jsx';
+import toast from 'react-hot-toast';
 
 function AuthForm() {
 

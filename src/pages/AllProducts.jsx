@@ -115,8 +115,8 @@ function AllProducts() {
                             <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-6 sm:gap-x-5 sm:gap-y-8">
                                 {filteredProducts.map((product) => (
                                     <NavLink 
-                                        to={`/product/${product.id}`} 
-                                        key={product.id} 
+                                        to={`/product/${product._id}`} 
+                                        key={product._id} 
                                         className="w-full flex justify-center hover:-translate-y-1 transition-transform duration-200"
                                     >
                                         <ProductCard product={product} />

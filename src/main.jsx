@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import DataProvider from './context/DataApi.jsx'
 import StoreProvider from './context/StoreContext.jsx'
+import AdminProvider from './context/admin.context.jsx'
 import './index.css'
 import App from './App.jsx'
 import store from './redux/index.js'
@@ -13,9 +14,11 @@ createRoot(document.getElementById('root')).render(
     <DataProvider>
       <BrowserRouter>
         <StoreProvider>
-        <Provider store={store}>
-          <App />
-        </Provider>
+          <AdminProvider>
+            <Provider store={store}>
+              <App />
+            </Provider>
+          </AdminProvider>
         </StoreProvider>
       </BrowserRouter>
     </DataProvider>

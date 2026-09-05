@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 export const api = axios.create({
-    baseURL: 'https://ecommerce-backend-smit-rho.vercel.app/',
+    baseURL: 'https://e-commerce-frontend-smit.vercel.app', // Replace with your backend API URL
     // https://ecommerce-backend-smit-rho.vercel.app/
     headers: {
         'Content-Type': 'application/json'
@@ -10,16 +10,32 @@ export const api = axios.create({
     withCredentials: true
 })
 
-export const registerUser = async (username, email, password) => {
+export const registerUser = async (username, email, password, role) => {
     try {
         const res = await api.post('/api/auth/register', {
             username,
             email,
-            password
+            password,
+            role
         })
         return res.data;
     } catch (error) {
         console.error('Error registering user:', error);
+        throw error;
+    }
+}
+
+export const addUser = async (username, email, password, role) => {
+    try {
+        const res = await api.post('/api/auth/admin-add', {
+            username,
+            email,
+            password,
+            role
+        })
+        return res.data;
+    } catch (error) {
+        console.error('Error adding user:', error);
         throw error;
     }
 }

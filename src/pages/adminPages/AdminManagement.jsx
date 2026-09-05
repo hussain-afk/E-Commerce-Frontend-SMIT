@@ -1,9 +1,10 @@
 import React from 'react'
+import AdminMange from '../../components/adminComponents/AdminMange'
 
 function AdminManagement() {
   return (
     <div>
-      management
+      <AdminMange />
     </div>
   )
 }

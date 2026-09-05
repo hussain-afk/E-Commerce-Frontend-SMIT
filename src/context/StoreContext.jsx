@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from 'react';
+import { createContext, useState, useEffect, useContext } from 'react';
 import { getMe } from '../api/auth.api.js';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
@@ -6,6 +6,7 @@ import { toast } from 'react-hot-toast';
 export const StoreContext = createContext()
 
 const StoreProvider = ({ children }) => {
+    // const { allUsers, setAllUsers, allProducts, setAllProducts } = useContext(AdminContext);
     const [sameCategoryProducts, setSameCategoryProducts] = useState(null);
     const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
     const [isVisible, setIsVisible] = useState(true);

@@ -66,7 +66,7 @@ const Routing = () => {
 
         {/* Protected Routes (Sirf logged in users ke liye) */}
         <Route 
-          path="/product/:id" 
+          path="/product/:_id" 
           element={<ProtectedRoute><DetailPage /></ProtectedRoute>} 
         />
         <Route 

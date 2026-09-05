@@ -12,7 +12,7 @@ function DataProvider({ children }) {
     const fetchProducts = async () => {
         try {
             // https://ecommerce-backend-smit.vercel.app/api/products
-            const response = await fetch('https://ecommerce-backend-smit-rho.vercel.app/api/data/products')
+            const response = await fetch('https://e-commerce-frontend-smit.vercel.app/api/data/products')
             const data = await response.json()
             setData(data)
             // console.log("Products:", data)

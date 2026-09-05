@@ -35,7 +35,7 @@ const StarRating = ({ rating = 0 }) => {
 };
 
 function ProdDetail() {
-  const { id } = useParams();
+  const { _id } = useParams();
   const dispatch = useDispatch();
   
   const { data } = useContext(DataApiContext);
@@ -43,7 +43,7 @@ function ProdDetail() {
   const cartItems = useSelector((state) => state.cart.cartItems);
 
   // Match product by ID safely
-  const product = data?.find((item) => String(item.id) === String(id));
+  const product = data?.find((item) => String(item._id) === String(_id));
   const category = product?.category || '';
 
   // Safe Image Gallery Fallbacks
@@ -77,7 +77,7 @@ function ProdDetail() {
     if (product?.colors?.[0]) {
       setSelectedColor(product.colors[0]);
     }
-  }, [id, product]);
+  }, [_id, product]);
 
   // Helper for checkmark contrast on color pills
   const isColorLight = (hexColor) => {
@@ -261,7 +261,7 @@ function ProdDetail() {
               onClick={handleAddToCart}
               className="flex-grow bg-black text-white text-sm sm:text-base font-medium py-3 sm:py-4 px-6 sm:px-8 rounded-full hover:bg-black/80 transition-all duration-200 active:scale-[0.99]"
             >
-              Add to Cart
+              Add to Cart or Order Now
             </button>
           </div>
 

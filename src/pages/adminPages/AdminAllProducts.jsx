@@ -1,9 +1,10 @@
 import React from 'react'
+import AllProducts from '../../components/adminComponents/AllProducts'
 
 function AdminAllProducts() {
   return (
     <div>
-      all products
+      <AllProducts />
     </div>
   )
 }

@@ -1,9 +1,10 @@
 import React from 'react'
+import AllUsers from '../../components/adminComponents/AllUsers'
 
 function AdminAllUsers() {
   return (
     <div>
-      all users
+      <AllUsers />
     </div>
   )
 }

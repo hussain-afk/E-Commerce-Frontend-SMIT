@@ -1,5 +1,5 @@
-import { registerUser, loginUser, logoutUser, adminLoginUser } from '../api/auth.api.js';
-import { useEffect, useContext } from 'react';
+import { registerUser, loginUser, logoutUser, adminLoginUser, addUser } from '../api/auth.api.js';
+import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { StoreContext } from '../context/StoreContext';
 import { toast } from 'react-hot-toast';
@@ -35,6 +35,28 @@ const useAuth = () => {
             setLoading(false);
         }
     };
+
+    const handleAddUser = async (username, email, password, role) => {
+        try {
+            setLoading(true);
+            const data = await addUser(
+                username,
+                email,
+                password,
+                role
+            );
+            toast.success('User added successfully');
+            setLoading(false);
+            console.log('User added:', data);
+            return data;
+        } catch (error) {
+            console.error('Error in handleAddUser:', error);
+            toast.error('Failed to add user');
+            throw error;
+        } finally {
+            setLoading(false);
+        }
+    }
 
     const handleLogin = async (username, password) => {
         try {
@@ -103,7 +125,8 @@ const useAuth = () => {
         handleRegister,
         handleLogin,
         handleAdminLogin,
-        handleLogout
+        handleLogout,
+        handleAddUser
     };
 
 }

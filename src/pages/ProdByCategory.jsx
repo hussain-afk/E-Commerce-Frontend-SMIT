@@ -29,8 +29,8 @@ function ProdByCategory() {
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-6 sm:gap-x-5 sm:gap-y-8 justify-items-center">
                 {
                     ProductsByCategory && ProductsByCategory.map((product) => (
-                        <NavLink to={`/product/${product.id}`} key={product.id}>
-                            <ProductCard key={product.id} product={product} />
+                        <NavLink to={`/product/${product._id}`} key={product._id}>
+                            <ProductCard key={product._id} product={product} />
                         </NavLink>
                     ))
                 }
